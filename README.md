@@ -129,10 +129,15 @@ o	Select a lead and click Run AI Matching
 
 🧪 Retesting with New JSON Files
 To retest with a new dataset:
-1.	Replace the Static Resources with updated JSON 
-2.	Re-run the LWC action 
-3.	The Apex and LLM logic will adapt automatically to new data 
+1. Upload updated salesfor and listing JSON files in to LWC UI, note: Salesforce JSON file name should contain 'Salesforce' and listing JSON file name contcins 'Listing' words.
+2.	Re-run the LWC action to upload from first tab
+3.	Navigate to AI Matching Tab and click 'Run AI Matching' Action button
+4.	The Apex and LLM logic will adapt automatically to new data 
 This ensures dynamic behaviour without code changes.
+<img width="1244" height="981" alt="SS_Web UI-LWC" src="https://github.com/user-attachments/assets/30481e44-5890-4dab-800e-adc57ecab310" />
+
+<img width="1251" height="1013" alt="SS_Web UI-Lead" src="https://github.com/user-attachments/assets/654bca1c-cce3-4891-8ece-8c81aeedf1ac" />
+
 
 🚀 Future Improvements
 •	Add embeddings + similarity search to speed up matching 
