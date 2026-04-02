@@ -1,0 +1,112 @@
+<template>
+    <lightning-tabset>
+
+        <!-- TAB 1: JSON Import -->
+        <lightning-tab label="JSON Import">
+            <lightning-card title="AI JSON Importer">
+
+                <div class="upload-box" ondrop={handleDrop} ondragover={handleDragOver}>
+                    <p>Drag & Drop JSON Files</p>
+                    <p>(salesforce_data.json & listings.json)</p>
+                </div>
+
+                <lightning-input type="file" accept=".json" label="Upload Files" multiple onchange={handleFiles}>
+                </lightning-input>
+
+                <template if:true={fileNames.length}>
+                    <p><b>Selected:</b> {fileNames}</p>
+                </template>
+
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Importing..."></lightning-spinner>
+                </template>
+
+                <lightning-button label="Start Import" onclick={startImport} class="slds-m-top_medium">
+                </lightning-button>
+
+            </lightning-card>
+        </lightning-tab>
+
+        <!-- TAB 2: AI Matching -->
+        <lightning-tab label="AI Matching">
+
+            <lightning-card title="AI Sales Matching">
+
+            <div class="slds-p-around_medium">
+
+            <lightning-button
+                label="Run AI Matching"
+                variant="brand"
+                onclick={handleRunAI}
+                disabled={isRunning}>
+            </lightning-button>
+
+            <template if:true={isRunning}>
+                <lightning-spinner alternative-text="Running AI..." size="small"></lightning-spinner>
+            </template>
+
+            </div>
+
+<!-- 
+            <lightning-datatable
+                key-field="Id"
+                data={results}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable> -->
+
+                <template if:true={results}>
+                    <template for:each={results} for:item="res">
+
+                        <div key={res.Id} class="slds-box slds-m-around_small">
+
+                                 
+                            <p><b>Created Date:</b>  <lightning-formatted-date-time
+                                        value={res.CreatedDate}
+                                        year="numeric"
+                                        month="short"
+                                        day="2-digit"
+                                        hour="2-digit"
+                                        minute="2-digit">
+                                    </lightning-formatted-date-time></p>
+
+                                <b>Lead: </b>
+                                <a href={res.leadUrl} target="_blank">
+                                    {res.Lead__r.Name}
+                                </a>
+                            </p>
+                            <p><b>Priority:</b> {res.Priority__c}</p>
+                            <p><b>Agent:</b> {res.Assigned_Agent_Name__c}</p>
+                            <p><b>Confidence:</b> {res.Confidence__c}%</p>
+
+                            <p><b>Insight:</b> {res.Insights__c}</p>
+
+                            <template if:true={res.parsedListings}>
+                                <p><b>Top Listings:</b></p>
+
+                                <template for:each={res.parsedListings} for:item="l">
+                                    <div key={l.name} class="slds-box slds-m-top_x-small">
+
+                                        <p><b>{l.name}</b> (Score: {l.score})</p>
+
+                                        <ul>
+                                            <template for:each={l.reasons} for:item="r">
+                                                <li key={r}>✔ {r}</li>
+                                            </template>
+                                        </ul>
+
+                                    </div>
+                                </template>
+                            </template>
+
+                        </div>
+
+                    </template>
+                </template>
+
+            </lightning-card>
+
+        </lightning-tab>
+
+    </lightning-tabset>
+</template>
