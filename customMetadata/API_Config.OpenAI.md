@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>API_Key__c</field>
-        <value xsi:type="xsd:string">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</value>
+        <value xsi:type="xsd:string">your-token</value>
     </values>
     <values>
         <field>Base_URL__c</field>
