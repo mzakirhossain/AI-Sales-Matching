@@ -11,19 +11,6 @@ This project implements an AI-driven matching and sales intelligence engine on t
 •	Synchronise results back to Salesforce via a mock API layer that mimics Salesforce REST patterns 
 This solution can adapt dynamically to new JSON data files and re-evaluate leads without hardcoding logic, fulfilling the deliverables in the Developer Assessment prompt.
 
-📂 Repository Structure
-AI-Sales-Matching/
-├── classes/                      # Apex logic layer
-├── customMetadata/               # Custom metadata for LLM configuration
-├── lwc/lwcAIMatchinSalesOps/     # UI (Lightning Web Component)
-├── namedCredentials/             # Named Credentials for LLM API integration
-├── remoteSiteSettings/           # Remote Site setup for callouts
-├── package.xml                  # Salesforce deployment manifest
-├── LICENSE                      # MIT License
-└── README.md                    # Project documentation
-
-<img width="823" height="263" alt="image" src="https://github.com/user-attachments/assets/c96819c3-6f4f-46b6-8291-852074f7f3ba" />
-
 
 🧩 Solution Architecture
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/1d549d6e-e3a2-4708-80ba-e792ca578332" />
@@ -55,6 +42,20 @@ Salesforce-native technologies:
 <img width="488" height="580" alt="image" src="https://github.com/user-attachments/assets/59e4de3a-7983-424c-8158-f7e74b9022d1" />
 
 <img width="471" height="459" alt="image" src="https://github.com/user-attachments/assets/e78fcb17-efd1-493a-9fe6-347d41b8e0ad" />
+
+
+📂 Repository Structure
+AI-Sales-Matching/
+├── classes/                      # Apex logic layer
+├── customMetadata/               # Custom metadata for LLM configuration
+├── lwc/lwcAIMatchinSalesOps/     # UI (Lightning Web Component)
+├── namedCredentials/             # Named Credentials for LLM API integration
+├── remoteSiteSettings/           # Remote Site setup for callouts
+├── package.xml                  # Salesforce deployment manifest
+├── LICENSE                      # MIT License
+└── README.md                    # Project documentation
+
+<img width="823" height="263" alt="image" src="https://github.com/user-attachments/assets/c96819c3-6f4f-46b6-8291-852074f7f3ba" />
 
 
 📌 Key Components Explained
