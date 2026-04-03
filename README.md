@@ -1,7 +1,7 @@
 # AI-Sales-Matching
 
 📘 AI-Sales-Matching — AI-Powered Sales Operations System
-This repository implements a Salesforce-centric AI-powered sales operations solution that mocks the client assessment described in your brief. It includes Salesforce metadata (Apex classes, LWC components), mock integration with an LLM API using Named Credentials, and UI logic for processing leads, recommending office listings, and intelligently routing agents.
+This repository implements a Salesforce-centric AI-powered sales operations solution that mocks the client assessment described in brief. It includes Salesforce metadata (Apex classes, LWC components), mock integration with an LLM API using Named Credentials, and UI logic for processing leads, recommending office listings, and intelligently routing agents.
 
 🧠Introduction & Scope
 This project implements an AI-driven matching and sales intelligence engine on top of Salesforce data. It is designed to enable commercial real estate brokers to:
